@@ -16,3 +16,11 @@ class InternetExceptions extends AppExceptions {
 class TimeOutExceptions extends AppExceptions {
   TimeOutExceptions([String ? message]) :super(message, 'Time out');
 }
+
+class InvalidUrlException extends AppExceptions {
+  InvalidUrlException([String ? message]) : super(message, 'Invalid Url');
+}
+
+class FetchDataException extends AppExceptions {
+  FetchDataException([String ? message]) : super (message, 'Error while communication');
+}
