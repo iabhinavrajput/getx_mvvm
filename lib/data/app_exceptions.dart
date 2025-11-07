@@ -16,5 +16,3 @@ class InternetExceptions extends AppExceptions {
 class TimeOutExceptions extends AppExceptions {
   TimeOutExceptions([String ? message]) :super(message, 'Time out');
 }
-
-
