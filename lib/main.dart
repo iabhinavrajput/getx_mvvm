@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:getx_mvvm/res/getx_loclization/languages.dart';
 import 'package:getx_mvvm/res/routes/routes.dart';
 import 'package:getx_mvvm/view/splash_screen.dart';
 
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      translations: Languages(),
+      locale: Locale('en', 'US'),
+      fallbackLocale: Locale('en', 'US'),
       home: const SplashScreen(),
       getPages: AppRoutes.appRoutes(),
     );
