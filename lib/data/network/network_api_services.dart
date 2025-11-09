@@ -27,14 +27,17 @@ class NetworkApiServices extends BaseApiServices {
     dynamic responseJson;
     try {
       final response = await http
-          .post(Uri.parse(url), body: jsonEncode(data))
+          .post(Uri.parse(url), body: data)
           .timeout(Duration(seconds: 10));
-      responseJson = responseJson(response);
+
+      print(response.body);
+      responseJson = responseJson?.call(response);
     } on SocketException {
       throw InternetExceptions();
     } on TimeOutExceptions {
       throw TimeOutExceptions();
     }
+    print(responseJson);
     return responseJson;
   }
 

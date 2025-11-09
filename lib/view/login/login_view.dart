@@ -66,7 +66,9 @@ class _LoginViewState extends State<LoginView> {
                   SizedBox(height: Get.height * .05),
                   ElevatedButton(
                     onPressed: () {
-                      if (_formkey.currentState!.validate()) {}
+                      if (_formkey.currentState!.validate()) {
+                        loginViewModel.loginApi();
+                      }
                     },
                     child: Text('Login'),
                   ),
