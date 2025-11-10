@@ -13,7 +13,7 @@ class NetworkApiServices extends BaseApiServices {
       final response = await http
           .get(Uri.parse(url))
           .timeout(Duration(seconds: 10));
-      responseJson = responseJson(response);
+      responseJson = returnResponse(response);
     } on SocketException {
       throw InternetExceptions();
     } on TimeOutExceptions {
@@ -31,7 +31,7 @@ class NetworkApiServices extends BaseApiServices {
           .timeout(Duration(seconds: 10));
 
       print(response.body);
-      responseJson = responseJson?.call(response);
+      responseJson = returnResponse(response);
     } on SocketException {
       throw InternetExceptions();
     } on TimeOutExceptions {
